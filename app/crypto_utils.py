@@ -4,8 +4,9 @@ from cryptography.hazmat.primitives import serialization, hashes
 
 
 def decrypt_seed(encrypted_seed_b64: str) -> str:
+    # print("text length:", len(encrypted_seed_b64))
     encrypted_seed = base64.b64decode(encrypted_seed_b64)
-
+    # print("Ciphertext length:", len(encrypted_seed))
     with open("keys/student_private.pem", "rb") as f:
         private_key = serialization.load_pem_private_key(
             f.read(), password=None
