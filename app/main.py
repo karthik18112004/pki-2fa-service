@@ -13,9 +13,9 @@ class SeedPayload(BaseModel):
 class CodePayload(BaseModel):
     code: str
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+# @app.get("/health")
+# def health():
+#     return {"status": "ok"}
 
 @app.post("/decrypt-seed")
 def decrypt_seed_api(payload: SeedPayload):
