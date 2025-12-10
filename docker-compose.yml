@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  pki2fa:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - seed_data:/data
+      - ./cron:/cron
+    restart: always
+
+volumes:
+  seed_data:
